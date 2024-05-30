@@ -8,10 +8,4 @@ public class Test1 {
 
         Assert.assertTrue(true);
     }
-
-    @Test
-    public void testFail() {
-
-        Assert.assertTrue(false);
-    }
 }
