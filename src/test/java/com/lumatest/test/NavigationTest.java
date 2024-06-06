@@ -15,6 +15,7 @@ public class NavigationTest extends BaseTest {
     @Description("TC-01 Open Base URL")
     @Link(TestData.BASE_URL)
     public void testOpenBaseUrl() {
+
         Allure.step("SetUp expected results");
         final String expectedUrl = TestData.BASE_URL + "/";
         final String expectedTitle = TestData.BASE_URL_TITLE;
@@ -30,19 +31,23 @@ public class NavigationTest extends BaseTest {
         Assert.assertEquals(actualUrl, expectedUrl);
         Allure.step("Verify actualTitle as expected");
         Assert.assertEquals(actualTitle, expectedTitle);
-
     }
 
-    @Test(dataProvider = "navigationData", dataProviderClass = TestData.class)
+    @Test(
+            description = "TC-02 Top Menu Navigation",
+            dataProvider = "navigationData",
+            dataProviderClass = TestData.class)
     @Story("Navigation")
-    @Severity(SeverityLevel.BLOCKER)
-    @Description("Test Navigation Menu")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("To verify that the top menu navigation on the website functions correctly by ensuring that " +
+            "clicking on menu items directs the user to the expected URL with the expected title.")
     @Link(TestData.BASE_URL)
     public void testNavigationMenu(String BASE_URL, By navbarMenu, String expectedUrl, String expectedTitle) {
+
         Allure.step("Open Base URL");
         getDriver().get(BASE_URL);
 
-        Allure.step("Click on" + navbarMenu.toString());
+        Allure.step("Click on " + navbarMenu.toString());
         getDriver().findElement(navbarMenu).click();
 
         Allure.step("Collect actualURL, actualTitle");
@@ -53,6 +58,5 @@ public class NavigationTest extends BaseTest {
         Assert.assertEquals(actualUrl, expectedUrl);
         Allure.step("Verify actualTitle as expected");
         Assert.assertEquals(actualTitle, expectedTitle);
-
     }
 }
