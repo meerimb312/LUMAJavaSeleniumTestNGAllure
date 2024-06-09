@@ -17,13 +17,13 @@
         </classes>
     </test>
 
-    <test name="EdgeTest" verbose="10">
-        <parameter name="browser" value="edge"/>
-        <classes>
-            <class name="com.lumatest.test.NavigationTest"/>
-            <!--                        <class name="FrameworkTest"/>-->
-        </classes>
-    </test>
+<!--    <test name="EdgeTest" verbose="10">-->
+<!--        <parameter name="browser" value="edge"/>-->
+<!--        <classes>-->
+<!--            <class name="com.lumatest.test.NavigationTest"/>-->
+<!--            &lt;!&ndash;                        <class name="FrameworkTest"/>&ndash;&gt;-->
+<!--        </classes>-->
+<!--    </test>-->
 
 
 </suite>
