@@ -8,6 +8,7 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
 
+
 public abstract class BaseTest {
     private WebDriver driver;
 
@@ -43,6 +44,7 @@ public abstract class BaseTest {
                 true);
 
         if (getDriver() != null) {
+
             getDriver().quit();
             Reporter.log("INFO: " + browser.toUpperCase() + " driver closed.", true);
 
