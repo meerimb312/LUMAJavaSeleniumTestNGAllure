@@ -9,7 +9,8 @@ import org.testng.annotations.Test;
 
 public class NavigationTest extends BaseTest {
 
-    @Test(description = "TC-01 Open Base URL", groups = {"Smoke", "Regression"})
+    @Test(description = "TC-01 Open Base URL", groups = {"Smoke", "Regression"},
+            testName = "NAVIGATION | Open Base URL")
     @Story("Navigation")
     @Severity(SeverityLevel.BLOCKER)
     @Description("To verify that the base URL and title of the application are correct and as expected.")
@@ -37,7 +38,8 @@ public class NavigationTest extends BaseTest {
             groups = {"Smoke", "Regression"},
             description = "TC-02 Top Menu Navigation",
             dataProvider = "navigationData",
-            dataProviderClass = TestData.class)
+            dataProviderClass = TestData.class,
+            testName = "NAVIGATION | Open Base URL")
     @Story("Navigation")
     @Severity(SeverityLevel.CRITICAL)
     @Description("To verify that the top menu navigation on the website functions correctly by ensuring that " +
