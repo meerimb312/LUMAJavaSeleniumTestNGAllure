@@ -33,6 +33,9 @@ public class TestData {
     public static final String SALE_URL = BASE_URL + "/sale.html";
     public static final String SALE_TITLE = "Sale";
 
+    //ProductPage
+    public static final String DRIVEN_BACKPACK_PRODUCT_NAME = "Driven Backpack";
+    public static final String DRIVEN_BACKPACK_PRODUCT_PAGE_BREADCRUMBS_MENU = "Home Gear Bags Driven Backpack";
 
     @DataProvider(name = "navigationData")
     public static Object[][] getNavMenuData() {
