@@ -47,37 +47,37 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Test with Maven
-      run: mvn -B package --file pom.xml test
+      run: mvn test
 
     - name: Dorny Test Reporter
       uses: dorny/test-reporter@v1.9.1
       if: success() || failure()
       with:
-          name: Test Reporter for ${{ matrix.os }}
-          path: target/surefire-reports/TEST-*.xml
-          reporter: java-junit
+        name: Test Reporter for ${{ matrix.os }}
+        path: target/surefire-reports/TEST-*.xml
+        reporter: java-junit
 
     - name: Load Allure test report history
       uses: actions/checkout@v4
       if: always()
       continue-on-error: true
       with:
-          ref: gh-pages
-          path: gh-pages
+        ref: gh-pages
+        path: gh-pages
 
     - name: Build Allure test report
       uses: simple-elf/allure-report-action@v1.7
       if: ${{ matrix.os == 'ubuntu-latest' }}
       with:
-          gh_pages: gh-pages
-          allure_history: allure-history
-          allure_results: target/allure-results
+        gh_pages: gh-pages
+        allure_history: allure-history
+        allure_results: target/allure-results
 
     - name: Publish Allure test report
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ matrix.os == 'ubuntu-latest' }}
       with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: allure-history
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: allure-history
 
