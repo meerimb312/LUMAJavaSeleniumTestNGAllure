@@ -18,5 +18,6 @@ public class BagsPage extends SideMenu {
         getDriver().findElement(By.xpath(imgXpath)).click();
 
         return new ProductPage(getDriver());
+
     }
 }
