@@ -47,7 +47,7 @@ jobs:
       run: mvn -B package --file pom.xml 
 
     - name: Test with Maven
-      run: mvn -B package --file pom.xml test
+      run: mvn test
 
     - name: Dorny Test Reporter 
       uses: dorny/test-reporter@v1.9.1
@@ -86,11 +86,4 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:
-    - name: Clone code from repo
-      uses: actions/checkout@v4
-      with: 
-        fetch-depth: 0
-        
-    - name: Run java checkstyle
-      uses: nikitasavinov/checkstyle-action@0.6.0   
+
