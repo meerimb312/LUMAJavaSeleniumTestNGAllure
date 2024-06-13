@@ -7,7 +7,7 @@
         <classes>
             <class name="com.lumatest.test.NavigationTest"/>
             <class name="com.lumatest.test.ProductPageTest"/>
-<!--            <class name="FrameworkTest"/>-->
+            <!--            <class name="FrameworkTest"/>-->
 
         </classes>
     </test>
@@ -17,7 +17,7 @@
         <classes>
             <class name="com.lumatest.test.NavigationTest"/>
             <class name="com.lumatest.test.ProductPageTest"/>
-<!--            <class name="FrameworkTest"/>-->
+            <!--            <class name="FrameworkTest"/>-->
         </classes>
     </test>
 
@@ -29,12 +29,13 @@
     <!--            </classes>-->
     <!--        </test>-->
 
-    <!--    <test name="FirefoxTest" verbose="10">-->
-    <!--        <parameter name="browser" value="firefox"/>-->
-    <!--        <classes>-->
-    <!--            <class name="com.lumatest.test.NavigationTest"/>-->
-    <!--            &lt;!&ndash;                        <class name="FrameworkTest"/>&ndash;&gt;-->
-    <!--        </classes>-->
-    <!--    </test>-->
+<!--    <test name="FirefoxTest" verbose="10">-->
+<!--        <parameter name="browser" value="firefox"/>-->
+<!--        <classes>-->
+<!--            <class name="com.lumatest.test.NavigationTest"/>-->
+<!--            <class name="com.lumatest.test.ProductPageTest"/>-->
+<!--            &lt;!&ndash;                        <class name="FrameworkTest"/>&ndash;&gt;-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
 
