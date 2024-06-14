@@ -15,7 +15,7 @@ public abstract class BaseTest {
     @BeforeSuite
     protected void setupWebDriverManager() {
         WebDriverManager.chromedriver().setup();
-        WebDriverManager.chromiumdriver().setup();
+//        WebDriverManager.chromiumdriver().setup();
 //        WebDriverManager.edgedriver().setup();
 //        WebDriverManager.firefoxdriver().setup();
 
@@ -25,8 +25,9 @@ public abstract class BaseTest {
     @BeforeMethod
     protected void setupDriver(@Optional("chrome") String browser, ITestResult result) {
         Reporter.log("---------------------------------------------------------", true);
-        this.driver = DriverUtils.createDriver(browser, this.driver);
         Reporter.log("RUN " + result.getMethod().getMethodName(), true);
+
+        this.driver = DriverUtils.createDriver(browser, this.driver);
 
         if (getDriver() == null) {
             Reporter.log("Error: Unknown parameter 'browser' - " + browser + ". ", true);
@@ -54,7 +55,7 @@ public abstract class BaseTest {
         }
     }
 
-    public WebDriver getDriver() {
+    protected WebDriver getDriver() {
 
         return this.driver;
     }
