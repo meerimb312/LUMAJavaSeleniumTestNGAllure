@@ -13,9 +13,9 @@ import java.util.Map;
 
 public class DriverUtils {
 
-    private static ChromeOptions chromeOptions;
-    private static FirefoxOptions firefoxOptions;
-    private static ChromiumOptions<ChromeOptions> chromiumOptions;
+    private static final ChromeOptions chromeOptions;
+    private static final FirefoxOptions firefoxOptions;
+    private static final ChromiumOptions<ChromeOptions> chromiumOptions;
     private static EdgeOptions edgeOptions;
 
 
@@ -73,6 +73,19 @@ public class DriverUtils {
         return chromeDriver;
     }
 
+    private static WebDriver createChromiumDriver(WebDriver driver) {
+        if (driver != null) {
+            driver.quit();
+        }
+        ChromeDriver chromeDriver = new ChromeDriver((ChromeOptions) chromiumOptions);
+        chromeDriver.executeCdpCommand("Network.enable", Map.of());
+        chromeDriver.executeCdpCommand(
+                "Network.setExtraHTTPHeaders", Map.of("headers", Map.of("accept-language", "en-US,en;q=0.9"))
+        );
+
+        return chromeDriver ;
+    }
+
     private static WebDriver createEdgeDriver(WebDriver driver) {
         if (driver != null) {
             driver.quit();
@@ -106,7 +119,7 @@ public class DriverUtils {
                 return createFirefoxDriver(driver);
             }
             case "chromium" -> {
-                return createChromeDriver(driver);
+                return createChromiumDriver(driver);
             }
             case "edge" -> {
                 return createEdgeDriver(driver);
