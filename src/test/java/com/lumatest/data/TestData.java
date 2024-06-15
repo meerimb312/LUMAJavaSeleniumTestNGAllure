@@ -50,4 +50,7 @@ public class TestData {
     public static final String DRIVEN_BACKPACK_PRODUCT_NAME = "Driven Backpack";
     public static final String DRIVEN_BACKPACK_PRODUCT_PAGE_BREADCRUMBS_MENU = "Home Gear Bags Driven Backpack";
 
+    //Search
+    public static final String RELATED_SEARCH_TERMS = "Related search terms";
+
 }
