@@ -57,7 +57,7 @@ jobs:
 
     - name: Build and Test with Maven
       if: ${{ matrix.os != 'ubuntu-latest' }}
-      run: mvn -B package --file pom.xml
+      run: mvn test -Dbrowser=${{ matrix.browser }}
 
     - name: Dorny Test Reporter 
       uses: dorny/test-reporter@v1.9.1
