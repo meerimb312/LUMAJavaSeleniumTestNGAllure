@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class SearchProductTest extends BaseTest {
 
-    @Test(description = "TC-04 Search Product Test",
+    @Test(description = "TC-06 Search Product Test",
             groups = {"Smoke", "Regression"})
     public void testSearchProduct() {
         Allure.step("Open Base URL.");
@@ -21,7 +21,7 @@ public class SearchProductTest extends BaseTest {
         final String searchProductName = homePage.getRelatedSearchTerms();
 
         Allure.step(
-                "Verify actual '" + TestData.RELATED_SEARCH_TERMS+ "' related to '" + TestData.DRIVEN_BACKPACK_PRODUCT_NAME + "'"
+                "Verify actual '" + TestData.DRIVEN_BACKPACK_PRODUCT_NAME+ "' related to '" + TestData.RELATED_SEARCH_TERMS + "'"
         );
         Assert.assertEquals(searchProductName, TestData.RELATED_SEARCH_TERMS);
     }
