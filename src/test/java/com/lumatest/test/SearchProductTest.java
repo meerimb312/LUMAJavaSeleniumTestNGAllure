@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class SearchProductTest extends BaseTest {
 
-    @Test(description = "TC-06 Search Product Test",
+    @Test(description = "TC-04 Search Product Test",
             groups = {"Smoke", "Regression"})
     public void testSearchProduct() {
         Allure.step("Open Base URL.");
