@@ -6,6 +6,9 @@
         <classes>
             <class name="com.lumatest.test.NavigationTest"/>
             <class name="com.lumatest.test.ProductPageTest"/>
+            <class name="com.lumatest.test.SearchProductTest"/>
+            <!--            <class name="FrameworkTest"/>-->
+
         </classes>
     </test>
 
@@ -14,6 +17,8 @@
         <classes>
             <class name="com.lumatest.test.NavigationTest"/>
             <class name="com.lumatest.test.ProductPageTest"/>
+            <class name="com.lumatest.test.SearchProductTest"/>
+            <!--            <class name="FrameworkTest"/>-->
         </classes>
     </test>
 
