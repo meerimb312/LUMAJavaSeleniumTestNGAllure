@@ -12,6 +12,7 @@
         <classes>
             <class name="com.lumatest.test.NavigationTest"/>
             <class name="com.lumatest.test.ProductPageTest"/>
+            <class name="com.lumatest.file.UploadDownloadFileTest"/>
         </classes>
     </test>
 </suite>

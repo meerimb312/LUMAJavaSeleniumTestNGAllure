@@ -9,6 +9,7 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class DriverUtils {
@@ -22,7 +23,7 @@ public class DriverUtils {
     static {
         chromeOptions = new ChromeOptions();
 
-        chromeOptions.addArguments("--incognito");
+//        chromeOptions.addArguments("--incognito");
         chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--window-size=1920,1080");
         chromeOptions.addArguments("--disable-gpu");
@@ -55,7 +56,15 @@ public class DriverUtils {
         edgeOptions.addArguments("--allow-running-insecure-content");
         edgeOptions.addArguments("--ignore-certificate-errors");
 
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("download.default_directory", "C:\\LUMAJavaSeleniumTestNGAllure\\src\\test\\resources"); // change this to your desired path
+        prefs.put("download.prompt_for_download", false);
+        prefs.put("download.directory_upgrade", true);
+        prefs.put("safebrowsing.enabled", true);
+        chromeOptions.setExperimentalOption("prefs", prefs);
+
     }
+
 
     private static WebDriver createChromeDriver(WebDriver driver) {
         if (driver != null) {
@@ -80,7 +89,7 @@ public class DriverUtils {
                 "Network.setExtraHTTPHeaders", Map.of("headers", Map.of("accept-language", "en-US,en;q=0.9"))
         );
 
-        return chromeDriver ;
+        return chromeDriver;
     }
 
     private static WebDriver createEdgeDriver(WebDriver driver) {

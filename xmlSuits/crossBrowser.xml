@@ -6,9 +6,11 @@
         <classes>
             <class name="com.lumatest.test.NavigationTest"/>
             <class name="com.lumatest.test.ProductPageTest"/>
+
+            <class name="com.lumatest.file.UploadDownloadFileTest"/>
+
             <class name="com.lumatest.test.SearchProductTest"/>
             <!--            <class name="FrameworkTest"/>-->
-
         </classes>
     </test>
 
@@ -17,16 +19,19 @@
         <classes>
             <class name="com.lumatest.test.NavigationTest"/>
             <class name="com.lumatest.test.ProductPageTest"/>
+
+            <class name="com.lumatest.file.UploadDownloadFileTest"/>
             <class name="com.lumatest.test.SearchProductTest"/>
             <!--            <class name="FrameworkTest"/>-->
         </classes>
     </test>
 
-<!--    <test name = "FirefoxTest" verbose="10">-->
-<!--        <parameter name="browser" value="firefox"/>-->
-<!--        <classes>-->
-<!--            <class name="com.lumatest.test.NavigationTest"/>-->
-<!--            <class name="com.lumatest.test.ProductPageTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="FirefoxTest" verbose="10">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.lumatest.test.NavigationTest"/>
+            <class name="com.lumatest.test.ProductPageTest"/>
+            <class name="com.lumatest.file.UploadDownloadFileTest"/>
+        </classes>
+    </test>
 </suite>
